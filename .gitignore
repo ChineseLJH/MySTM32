@@ -24,9 +24,9 @@ Makefile
 # =================================
 # 3. 编辑器配置 (可选)
 # =================================
-.vscode/*
+**/.vscode/*
 
-!.vscode/launch.json
+!**/.vscode/launch.json
 
 .idea/
 *.swp
