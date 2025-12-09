@@ -90,3 +90,24 @@ add_custom_target(flash
     COMMENT "Flashing STM32F1x via OpenOCD + ST-Link    ..."
     USES_TERMINAL
 )
+
+
+# ---------------------------------------------------------
+# 添加 ST-Link 烧录任务 (直接使用 st-flash)
+# ---------------------------------------------------------
+# add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
+#     COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:${CMAKE_PROJECT_NAME}> ${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}.bin
+#     COMMENT "Generating binary file from ELF..."
+# )
+
+# add_custom_target(flash
+#     # st-flash命令语法：st-flash write <文件> <地址>
+#     COMMAND st-flash write ${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}.bin 0x08000000
+    
+#     # 确保在烧录前先完成构建和生成bin文件
+#     DEPENDS ${CMAKE_PROJECT_NAME}
+    
+#     # 打印提示信息
+#     COMMENT "Flashing STM32F1x via ST-Link directly..."
+#     USES_TERMINAL
+# )
